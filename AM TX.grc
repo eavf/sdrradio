@@ -121,7 +121,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: '48000'
+    value: 1e6
   states:
     bus_sink: false
     bus_source: false
@@ -218,7 +218,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [264, 308.0]
+    coordinate: [104, 356.0]
     rotation: 0
     state: true
 - name: band_pass_filter_0
@@ -560,7 +560,7 @@ blocks:
     bus_structure: null
     coordinate: [1064, 372.0]
     rotation: 0
-    state: enabled
+    state: disabled
 - name: qtgui_waterfall_sink_x_0
   id: qtgui_waterfall_sink_x
   parameters:
@@ -622,6 +622,26 @@ blocks:
     coordinate: [880, 220.0]
     rotation: 0
     state: enabled
+- name: soapy_hackrf_sink_0
+  id: soapy_hackrf_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: 'False'
+    bandwidth: '0'
+    center_freq: tx_freq
+    comment: ''
+    dev_args: ''
+    samp_rate: samp_rate
+    type: fc32
+    vga: '16'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1168, 440.0]
+    rotation: 0
+    state: true
 
 connections:
 - [analog_sig_source_x_0, '0', band_pass_filter_0, '0']
@@ -630,7 +650,7 @@ connections:
 - [blocks_add_const_vxx_0, '0', blocks_multiply_xx_0, '0']
 - [blocks_multiply_xx_0, '0', mmse_resampler_xx_0, '0']
 - [blocks_multiply_xx_0, '0', qtgui_waterfall_sink_x_0, '0']
-- [mmse_resampler_xx_0, '0', osmosdr_sink_0, '0']
+- [mmse_resampler_xx_0, '0', soapy_hackrf_sink_0, '0']
 
 metadata:
   file_format: 1
