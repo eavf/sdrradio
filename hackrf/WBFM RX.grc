@@ -54,9 +54,9 @@ blocks:
     min_len: '200'
     orient: QtCore.Qt.Horizontal
     rangeType: float
-    start: '10'
-    step: '12'
-    stop: '70'
+    start: '0'
+    step: '8'
+    stop: '40'
     value: '15'
     widget: counter_slider
   states:
